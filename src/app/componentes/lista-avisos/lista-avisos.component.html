@@ -1,0 +1,13 @@
+<ion-list>
+  <ion-item *ngFor="let a of avisos">
+    <ion-thumbnail slot="start">
+      <img [src]="a.imagen" alt="Thumb" style="max-width: 75px;" *ngIf="a.imagen" />
+    </ion-thumbnail>
+    <ion-label>
+      <strong>{{a.titulo}}</strong> {{a.fecha | date: 'yyyy-MM-dd'}}
+    </ion-label>
+    <ion-button (click)="confirmarEliminarAviso(a)" fill="clear" class="trash-button">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>

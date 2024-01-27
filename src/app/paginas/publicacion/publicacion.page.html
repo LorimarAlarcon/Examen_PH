@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/publicaciones" type="reset" />
+    </ion-buttons>
+    <ion-title>Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <app-form-avisos (onAvisoAgregado)="onCrearAviso($event)"></app-form-avisos>
+</ion-content>

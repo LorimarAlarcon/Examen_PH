@@ -1,0 +1,60 @@
+<ion-content color="secundary">
+  <ion-list lines="none" class="custom-container" class="ion-padding-start">
+    <ion-item class="custom-margin-bottom">
+      <ion-input
+        [(ngModel)]="aviso.titulo"
+        required="required"
+        minlength="5" 
+        #tituloInput="ngModel"
+        label="Título" 
+        labelPlacement="floating" 
+        placeholder="Título de la publicación" 
+        color="dark"></ion-input>
+    </ion-item>
+    <ion-row class="custom-margin-bottom">
+      <ion-col size="12">
+        <div class="photo-container">
+          <ion-button (click)="capturarFoto()" color="dark" >
+            <ion-icon slot="start" name="camera-outline"></ion-icon>
+            FOTOGRAFÍA
+          </ion-button>
+          <ion-img *ngIf="foto != null" [src]="foto.webPath" alt="foto" class="photo" /> <!-- Añade una clase 'photo' -->
+        </div>
+      </ion-col>      
+    </ion-row>
+    <ion-col size="9">
+      <ion-item class="custom-margin-bottom">
+        <ion-input 
+          [(ngModel)]="aviso.descripcion"
+          required="required"
+          minlength="20" 
+          #descripcionInput="ngModel"
+          label="Descripción" 
+          labelPlacement="floating" 
+          placeholder="Descripción de la publicación" 
+          color="dark">
+        </ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-button 
+      [disabled]="!tituloInput.valid || !descripcionInput.valid" 
+      (click)="onClick()"
+      fill="clear"
+      class="custom-margin-bottom" >
+        GUARDAR
+    </ion-button>
+  </ion-list>
+  <ion-item lines="none">
+    <ion-text
+    [hidden]="tituloInput.valid || tituloInput.pristine"
+    color="danger">
+    Escriba un título con al menos 5 caracteres
+    </ion-text>
+    <br>
+    <ion-text
+    [hidden]="descripcionInput.valid || descripcionInput.pristine"
+    color="danger">
+    El una descripcion con al menos 20 caracteres
+    </ion-text>
+  </ion-item>   
+</ion-content>

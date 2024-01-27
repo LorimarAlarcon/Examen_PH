@@ -1,0 +1,32 @@
+.custom-container {
+    margin-top: 20px;
+  }
+  
+  .custom-margin-bottom {
+    margin-bottom: 20px;
+  }
+
+  ion-img::part(image) {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    object-position: center; 
+    margin-right: 20px;
+  }
+
+  .photo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .photo {
+    width: 100px; /* Ajusta el ancho de la foto según lo necesites */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    object-fit: cover;
+    object-position: center; 
+    margin-left: 10px; /* Ajusta el margen izquierdo según lo necesites */
+  }
+  
+  ion-button {
+    margin-right: 10px; /* Ajusta el margen derecho del botón según lo necesites */
+  }

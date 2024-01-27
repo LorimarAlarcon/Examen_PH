@@ -1,0 +1,7 @@
+{
+  "name": "ef-ph",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
